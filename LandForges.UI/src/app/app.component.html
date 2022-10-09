@@ -1,0 +1,28 @@
+<br>
+<br>
+<button (click)="initNewForge()" class="btn btn-primary" >Yeni Personel</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sınıf</th>
+      <th scope="col">Ad</th>
+      <th scope="col">Soyad</th>
+      <th scope="col">Görev Yeri</th>
+      <th scope="col">Rütbesi</th>
+      <th scope="col">Düzenle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of forges">
+      <th>{{ item.greade }}</th>
+      <td>{{ item.firstName }}</td>
+      <td>{{ item.lastName }}</td>
+      <td>{{ item.place }}</td>
+      <td>{{ item.rank}}</td>
+      <td><button (click)="editForge(item)" class="btn btn-primary">Düzenle</button></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<app-edit-land-forges [forge]="forgeToEdit" (forgesUpdated)="updateForgeList($event)"></app-edit-land-forges>

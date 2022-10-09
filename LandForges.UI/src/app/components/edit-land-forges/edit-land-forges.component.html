@@ -1,0 +1,39 @@
+<div *ngIf="forge">
+<h2>{{ forge.firstName }}</h2>
+<div>
+    <br>
+    Ad:
+    <input [(ngModel)]="forge.firstName"placeholder="Ad giriniz" class="form-control">
+</div>
+<br>
+<div>
+    Soyad:
+    <br>
+    <input [(ngModel)]="forge.lastName"placeholder="Soyad giriniz" class="form-control">
+</div>
+<br>
+<div>
+    Görev Yeri:
+    <br>
+    <input [(ngModel)]="forge.place"placeholder="Görev Yeri giriniz" class="form-control">
+</div>
+<br>
+<div>
+    Askeri Sınıfı:
+    <br>
+    <input [(ngModel)]="forge.greade"placeholder="Askeri Sınıfı giriniz" class="form-control">
+</div>
+<br>
+<div>
+    Rütbesi:
+    <br>
+    <input [(ngModel)]="forge.rank"placeholder="Rütbe giriniz" class="form-control">
+</div>
+<br>
+<button (click)="saveforge(forge)" *ngIf="!forge.id" class="btn btn-success">Kaydet</button>
+<br>
+<button (click)="deleteforge(forge)" *ngIf="forge.id" class="btn btn-danger">Sil</button>
+<br>
+<button (click)="updateforge(forge)" *ngIf="forge.id" class="btn btn-warning">Güncelle</button>
+
+</div>
